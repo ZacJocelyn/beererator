@@ -5,5 +5,17 @@ $(document).ready(function () {
   });
 });
 function displayBeer(result) {
-  console.log(result);
+  var $section = $('.beer-display');
+  $section.html('');
+  $section.append(displayName(result));
+}
+
+function displayName(result) {
+  var name = result.data.nameDisplay;
+  var $h1 = $('<h1>' + name + '</h1>');
+  return $h1;
+}
+
+function append() {
+
 }
