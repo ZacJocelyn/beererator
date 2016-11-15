@@ -2,8 +2,11 @@ $(document).ready(function () {
   $('button').click(function(event) {
     event.preventDefault();
     $.get('https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/random?key=c2c91700d2822349080b91377047e76d&format=json', displayBeer);
+    $.get('https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/js?key=AIzaSyDc7bvpogNBwNN6YHrCnPgiJKoUVJC7R1g&libraries=places', displayStore)
   });
 });
+
+// to display the beer info
 function displayBeer(result) {
   append(result);
   remove();
@@ -39,3 +42,7 @@ function randomNum() {
   num = Math.floor(num * 1000);
   return num.toString();
 }
+// to display the location of a liqor store near you
+// function displayStore(stores) {
+//   codeAddress();
+// }
