@@ -5,9 +5,7 @@ $(document).ready(function () {
   });
 });
 function displayBeer(result) {
-  var $section = $('.beer-display');
-  $section.html('');
-  $section.append(displayName(result));
+  append(result);
 }
 
 function displayName(result) {
@@ -15,7 +13,14 @@ function displayName(result) {
   var $h1 = $('<h1>' + name + '</h1>');
   return $h1;
 }
+function description(result) {
+  var desc = result.data.style.description;
+  var $p = $('<p>' + desc + '</p>');
+  return $p;
+}
 
-function append() {
-
+function append(result) {
+  var $section = $('.beer-display');
+  $section.html('');
+  $section.append(displayName(result), description(result));;
 }

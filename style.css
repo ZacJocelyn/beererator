@@ -1,32 +1,41 @@
-*{
+* {}
 
-}
-  body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
-header{
+}
+
+header {
     font-family: 'Shrikhand', cursive;
 }
-  main {
+
+main {
     flex: 1 0 auto;
     margin-top: 10vh;
-  }
-  button{
+}
+
+button {
     background: none;
     border: none;
     margin: 0 auto;
-  }
-  img{
+}
+
+img {
     height: 15vh;
     width: 10vw;
     margin: 0 auto;
-  }
-button:active{
-  background: none;
-  border: none;
 }
-h5{
-  margin: 0 auto;
+
+button:active {
+    background: none;
+    border: none;
+}
+
+h5 {
+    margin: 0 auto;
+}
+
+footer {
+    font-family: 'Shrikhand', cursive;
 }
