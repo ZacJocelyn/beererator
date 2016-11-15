@@ -1,10 +1,14 @@
+*{
 
+}
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
-
+header{
+    font-family: 'Shrikhand', cursive;
+}
   main {
     flex: 1 0 auto;
     margin-top: 10vh;
