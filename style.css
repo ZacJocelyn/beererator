@@ -1,0 +1,25 @@
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    margin-top: 10vh;
+  }
+  button{
+    background: none;
+    border: none;
+    margin: 0 auto;
+  }
+  img{
+    height: 15vh;
+    width: 10vw;
+    margin: 0 auto;
+  }
+button:active{
+  background: none;
+  border: none;
+}
