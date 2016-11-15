@@ -22,5 +22,7 @@ function description(result) {
 function append(result) {
   var $section = $('.beer-display');
   $section.html('');
-  $section.append(displayName(result), description(result));;
+  $section.append(displayName(result), description(result));
+  $('h5').html('');
+  $('h5').text('Thanks for getting a beer!!');
 }
