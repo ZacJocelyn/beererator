@@ -21,7 +21,7 @@ button {
     margin: 0 auto;
 }
 
-img {
+.btn-pic {
     height: 15vh;
     width: 10vw;
     margin: 0 auto;
@@ -43,4 +43,8 @@ footer {
 .beer-display{
   font-family: 'Bree Serif', serif;
   text-align: center;
+}
+.result-pic{
+  width: 20vw;
+  height: 30vh;
 }
