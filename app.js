@@ -6,6 +6,7 @@ $(document).ready(function () {
 });
 function displayBeer(result) {
   append(result);
+  remove();
 }
 
 function displayName(result) {
@@ -25,4 +26,7 @@ function append(result) {
   $section.append(displayName(result), description(result));
   $('h5').html('');
   $('h5').text('Thanks for getting a beer!!');
+}
+function remove() {
+  $('main').html('');
 }
