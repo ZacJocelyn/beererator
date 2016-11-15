@@ -20,7 +20,7 @@ function description(result) {
   return $p;
 }
 function displayImg() {
-  var $img = $('<img class="result-pic" src ="http://beerhold.it/' + randomNum() + '/' + randomNum() + '"/>');
+  var $img = $('<img class="result-pic" src ="https://beerhold.it/' + randomNum() + '/' + randomNum() + '"/>');
   return $img;
 }
 
