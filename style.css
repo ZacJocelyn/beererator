@@ -23,3 +23,15 @@ button:active{
   background: none;
   border: none;
 }
+.beer-display{
+  display: none;
+}
+.beer-name{
+  display: none;
+}
+.beer-description{
+  display: none;
+}
+.location{
+  display: none;
+}
