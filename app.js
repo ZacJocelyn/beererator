@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var input = document.getElementById('address');
-  var options = {
+    var input = document.getElementById('address');
+    var options = {
 
-  };
+    };
     $('button').click(function(event) {
         event.preventDefault();
         var $input = $('input');
@@ -10,10 +10,11 @@ $(document).ready(function() {
         $input.val('');
         $('#map').show();
         $.get('https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/random?key=c2c91700d2822349080b91377047e76d&format=json', displayBeer);
-        $.get('https://maps.googleapis.com/maps/api/geocode/json?address='+ address +'key=AIzaSyB6Krk9RvBv_qAPxlab5VzP0Ybae5Skjqw', initMap)
+        $.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + 'key=AIzaSyB6Krk9RvBv_qAPxlab5VzP0Ybae5Skjqw', initMap)
+        $.get('https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/js?key=AIzaSyDc7bvpogNBwNN6YHrCnPgiJKoUVJC7R1g&libraries=places', initialize);
     });
-        $.get('https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/js?key=AIzaSyDc7bvpogNBwNN6YHrCnPgiJKoUVJC7R1g&libraries=places')
-        autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
 });
 
 // to display the beer info
@@ -41,7 +42,7 @@ function displayImg() {
 
 function append(result) {
     var $section = $('.beer-display');
-    $section.append(displayName(result), displayImg(), description(result));
+    $section.append(displayName(result), displayImg(), description(result), displayMap());
     $('h5').html('');
     $('h5').text('Thanks for getting a beer!!');
 }
@@ -58,13 +59,65 @@ function randomNum() {
 // to display the location of a liqor store near you
 var geocoder;
 var map;
+var lng;
+var lat;
 function initMap(obj) {
-  var lat = obj.results[0].geometry.location.lat;
-  var lng = obj.results[0].geometry.location.lng;
-  geocoder = new google.maps.Geocoder();
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: lat, lng: lng},
-    zoom: 15
-  });
-  return lat, lng;
+    lat = obj.results[0].geometry.location.lat;
+    lng = obj.results[0].geometry.location.lng;
+    geocoder = new google.maps.Geocoder();
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: lat,
+            lng: lng
+        },
+
+        zoom: 15
+    });
+    return lat, lng;
+
+}
+
+///////////////////////////////////////////////
+var allPlaceName = [];
+var placeType = [];
+function initialize() {
+    var pyrmont = new google.maps.LatLng(lat, lng);
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 16
+    });
+    var request = {
+        location: pyrmont,
+        radius: '1000',
+        types: ['bar']
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            allPlaceName.push(place.name)
+            placeType.push(place.types[0])
+            console.log(place);
+            createMarker(results[i]);
+        }
+    }
+    console.log(allPlaceName);
+    console.log(placeType);
+}
+
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
 }
