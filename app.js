@@ -8,7 +8,6 @@ $(document).ready(function() {
         var $input = $('input');
         var address = $input.val();
         $input.val('');
-        console.log(address);
         $('#map').show();
         $('#locations').show();
         $.get('https://galvanize-cors-proxy.herokuapp.com/https://api.brewerydb.com/v2/beer/random?key=c2c91700d2822349080b91377047e76d&format=json', displayBeer);
@@ -105,13 +104,11 @@ function callback(results, status) {
             allPlaceName.push(place.name)
             placeType.push(place.types[0])
             openClosed.push(place.opening_hours.open_now)
-            console.log(place);
+
 
             createMarker(results[i]);
         }
     }
-    console.log(allPlaceName);
-    // console.log(placeType);
     // displayList();
 }
 
@@ -131,17 +128,13 @@ function createMarker(place) {
 // display a list of places and if they are open
 
 // function displayList() {
-//   console.log(openClosed, allPlaceName);
 //   for (var i = 0; i < allPlaceName.length; i++) {
 //     for (var j = 0; j < openClosed.length; j++) {
-//       console.log(openClosed[j]);
 //       if (openClosed[j] === true) {
 //         $('#locations').append($('<li>' + allPlaceName[i] + ' is open!</li>'));
-//         console.log('open');
 //       }
 //       else if (openClosed[j] === false) {
 //         $('#locations').append($('<li>' + allPlaceName[i] + ' is closed :(</li>'));
-//         console.log('closed');
 //       }
 //     }
 //   }
