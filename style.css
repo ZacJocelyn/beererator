@@ -58,4 +58,21 @@ footer {
 #locaitons{
   text-align: center;
   display: none;
+  list-style: none;
+}
+.location-display{
+  font-family: 'Bree Serif', serif;
+  text-align: center;
+}
+.open{
+  color: green;
+}
+.closed{
+  color: red;
+}
+#open{
+  list-style-type: none;
+}
+#closed{
+  list-style-type: none;
 }

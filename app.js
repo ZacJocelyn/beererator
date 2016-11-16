@@ -109,7 +109,7 @@ function callback(results, status) {
             createMarker(results[i]);
         }
     }
-    // displayList();
+    displayList();
 }
 
 function createMarker(place) {
@@ -127,15 +127,14 @@ function createMarker(place) {
 
 // display a list of places and if they are open
 
-// function displayList() {
-//   for (var i = 0; i < allPlaceName.length; i++) {
-//     for (var j = 0; j < openClosed.length; j++) {
-//       if (openClosed[j] === true) {
-//         $('#locations').append($('<li>' + allPlaceName[i] + ' is open!</li>'));
-//       }
-//       else if (openClosed[j] === false) {
-//         $('#locations').append($('<li>' + allPlaceName[i] + ' is closed :(</li>'));
-//       }
-//     }
-//   }
-// }
+function displayList() {
+  console.log(allPlaceName, openClosed)
+  for (var i = 0; i < allPlaceName.length; i++) {
+      if (openClosed[i] === true) {
+        $('#locations').append($('<li id="open">' + allPlaceName[i] + '<p class="open">open!</p></li>'));
+      }
+      else if (openClosed[i] === false) {
+        $('#locations').append($('<li id="closed">' + allPlaceName[i] + '<p class="closed">closed :(</p></li>'));
+    }
+  }
+}
