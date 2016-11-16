@@ -51,4 +51,7 @@ footer {
 #map{
   width: 30vw;
   height: 30vh;
+  margin: 0 auto;
+  margin-top: 5vh;
+  display: none;
 }
