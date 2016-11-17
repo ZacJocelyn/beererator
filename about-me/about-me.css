@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 10vh;
+    font-family: 'Bree Serif', serif;
+}
+
+footer {
+    font-family: 'Shrikhand', cursive;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+nav .brand-logo{
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'Shrikhand', cursive;
+}
+nav .brand-logo:hover{
+  font-size: 3em;
+}
+nav ul a{
+  font-family: 'Bree Serif', serif;
+  font-size: 1.5em;
+}
+.img{
+ height: 10%;
+}
+h1{
+  font-size: 3em;
+  text-align: center;
+}
+h2{
+  font-size: 2.5em;
+  text-align: center;
+}
