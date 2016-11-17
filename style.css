@@ -76,23 +76,23 @@ nav ul a{
 #locaitons{
   display: none;
   list-style: none;
-  margin: 0 auto;
+  padding-left: 25%;
 }
 .location-display{
   font-family: 'Bree Serif', serif;
   text-align: center;
 }
-.open{
-  color: green;
-}
-.closed{
-  color: red;
-}
 #open{
+  border-radius: 5%;
   list-style-type: none;
+  width: 15vw;
+  margin: 2em auto;
 }
 #closed{
+  border-radius: 5%;
   list-style-type: none;
+  width: 15vw;
+  margin: 2em auto;
 }
 .description-box{
   width: 80%;
@@ -100,4 +100,10 @@ nav ul a{
 }
 .beer-card{
   margin-top: 5%;
+}
+.chip .open{
+  background-color: green;
+}
+.chip .closed{
+  background-color: red;
 }
