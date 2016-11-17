@@ -29,8 +29,9 @@ nav ul a{
   font-family: 'Bree Serif', serif;
   font-size: 1.5em;
 }
-.img{
- height: 10%;
+#pic{
+ height: 10vh;
+ width: auto;
 }
 h1{
   font-size: 3em;

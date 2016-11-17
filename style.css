@@ -51,8 +51,10 @@ nav .brand-logo:hover{
   font-size: 3em;
 }
 .desc{
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 3%;
+  text-align: left;
 }
 nav ul a{
   font-family: 'Bree Serif', serif;
@@ -61,6 +63,8 @@ nav ul a{
 .result-pic{
   width: 20vw;
   height: 30vh;
+  border-radius: 5%;
+  border-bottom: 0.5px solid black;
 }
 #map{
   width: 30vw;
@@ -70,9 +74,9 @@ nav ul a{
   display: none;
 }
 #locaitons{
-  text-align: center;
   display: none;
   list-style: none;
+  margin: 0 auto;
 }
 .location-display{
   font-family: 'Bree Serif', serif;
@@ -89,4 +93,11 @@ nav ul a{
 }
 #closed{
   list-style-type: none;
+}
+.description-box{
+  width: 80%;
+  margin: 0 auto;
+}
+.beer-card{
+  margin-top: 5%;
 }

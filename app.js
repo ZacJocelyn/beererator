@@ -26,27 +26,44 @@ function displayBeer(result) {
     append(result);
     remove();
 }
-
-function displayName(result) {
-    var name = result.data.nameDisplay;
-    var $h1 = $('<h1>' + name + '</h1>');
-    return $h1;
-}
-
-function description(result) {
-    var desc = result.data.style.description;
-    var $p = $('<p class="desc">' + desc + '</p>');
-    return $p;
-}
-
-function displayImg() {
-    var $img = $('<img class="result-pic" src ="https://beerhold.it/' + randomNum() + '/' + randomNum() + '"/>');
-    return $img;
-}
+//
+// function displayName(result) {
+//     var name = result.data.nameDisplay;
+//     var $h1 = $('<h1>' + name + '</h1>');
+//     return $h1;
+// }
+//
+// function description(result) {
+//     var desc = result.data.style.description;
+//     var $p = $('<div class="z-depth-3 description-box"><p class="desc">' + desc + '</p></div>');
+//     return $p;
+// }
+//
+// function displayImg() {
+//     var $img = $('<img class="z-depth-3 result-pic" src ="https://beerhold.it/' + randomNum() + '/' + randomNum() + '"/>');
+//     return $img;
+// }
 
 function append(result) {
     var $section = $('.beer-display');
-    $section.append(displayName(result), displayImg(), description(result));
+
+var beerCard = `<div class="row">
+  <div class="beer-card col s6 offset-s3">
+    <div class="card">
+      <div class="card-image">
+        <img class="img-responsive" src="https://beerhold.it/${randomNum()}/${randomNum()}">
+        <span class="card-title">${result.data.nameDisplay}</span>
+      </div>
+      <div class="card-content">
+        <p>${result.data.style.description}</p>
+      </div>
+      <div class="card-action">
+      </div>
+    </div>
+  </div>
+</div>`;
+
+    $section.append(beerCard)//displayName(result), displayImg(), description(result));
     $('h5').html('');
     $('h5').text('Thanks for getting a beer!!');
 }
@@ -56,9 +73,13 @@ function remove() {
 }
 
 function randomNum() {
+    var numArr =[
+      200, 300, 400, 500, 600, 700, 200, 600, 500, 300
+    ];
     var num = Math.random();
-    num = Math.floor(num * 1000);
-    return num.toString();
+    num = Math.floor(num * 10);
+    return numArr[num];
+
 }
 // to display the location of a liqor store near you
 var geocoder;
