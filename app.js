@@ -14,6 +14,9 @@ $(document).ready(function() {
         $.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyB6Krk9RvBv_qAPxlab5VzP0Ybae5Skjqw', initMap)
         $.get('https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/js?key=AIzaSyDc7bvpogNBwNN6YHrCnPgiJKoUVJC7R1g&libraries=places', initialize);
     });
+    $('.brand-logo').click(function(event) {
+      window.location.reload();
+    })
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
 });
@@ -32,7 +35,7 @@ function displayName(result) {
 
 function description(result) {
     var desc = result.data.style.description;
-    var $p = $('<p>' + desc + '</p>');
+    var $p = $('<p class="desc">' + desc + '</p>');
     return $p;
 }
 

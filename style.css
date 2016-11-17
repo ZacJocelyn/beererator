@@ -3,11 +3,8 @@
 body {
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
     flex-direction: column;
-}
-
-header {
-    font-family: 'Shrikhand', cursive;
 }
 
 main {
@@ -39,10 +36,27 @@ h5 {
 
 footer {
     font-family: 'Shrikhand', cursive;
+    font-size: 2.5em;
 }
 .beer-display{
-  font-family: 'Bree Serif', serif;
   text-align: center;
+  margin: 0 auto;
+}
+nav .brand-logo{
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'Shrikhand', cursive;
+}
+nav .brand-logo:hover{
+  font-size: 3em;
+}
+.desc{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+nav ul a{
+  font-family: 'Bree Serif', serif;
+  font-size: 1.5em;
 }
 .result-pic{
   width: 20vw;
