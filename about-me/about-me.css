@@ -47,6 +47,9 @@ h2{
   margin-left: 1em;
   font-size: 1.5em;
 }
+.link:hover{
+  font-size: 2em;
+}
 section{
   margin-left: 32%;
 }
