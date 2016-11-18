@@ -32,8 +32,8 @@ nav ul a{
 #pic{
  height: 40vh;
  width: auto;
- margin-left: 40%;
- margin-right: 40%;
+ /*margin-left: 40vw;
+ margin-right: 40vw;*/
 }
 h1{
   font-size: 3em;
@@ -45,11 +45,11 @@ h2{
 }
 .link{
   margin-left: 1em;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .link:hover{
-  font-size: 2em;
+  font-size: 1.5em;
 }
 section{
-  margin-left: 32%;
+text-align: center;
 }
