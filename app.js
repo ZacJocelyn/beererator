@@ -51,7 +51,7 @@ function append(result) {
   <div class="beer-card col s6 offset-s3">
     <div class="card">
       <div class="card-image">
-        <img class="img-responsive" src="https://beerhold.it/${randomNum()}/${randomNum()}">
+        <img class="img-responsive" src="beer-flight.jpg">
         <span class="card-title">${result.data.nameDisplay}</span>
       </div>
       <div class="card-content">
@@ -72,15 +72,15 @@ function remove() {
     $('main').html('');
 }
 
-function randomNum() {
-    var numArr = [
-        200, 300, 400, 500, 600, 700, 200, 600, 500, 300
-    ];
-    var num = Math.random();
-    num = Math.floor(num * 10);
-    return numArr[num];
-
-}
+// function randomNum() {
+//     var numArr = [
+//         200, 300, 400, 500, 600, 700, 200, 600, 500, 300
+//     ];
+//     var num = Math.random();
+//     num = Math.floor(num * 10);
+//     return numArr[num];
+//
+// }
 // to display the location of a liqor store near you
 var geocoder;
 var map;
